@@ -1,6 +1,6 @@
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -MMD -std=c++98 # -fsanitize=address
-SRCS = ClassZombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SRCS = $(shell find . -type f -name "*.cpp")
 
 OBJ = $(SRCS:.cpp=.o)
 DEPENDS = ${SRCS:.cpp=.d}
@@ -11,7 +11,7 @@ NAME = a.out
 all: $(SRCS) $(NAME) run
 
 run:
-	./$(NAME)
+	./$(NAME) file.txt hello loh
 
 $(NAME): $(OBJ)
 		$(CC) $(FLAGS) $(OBJ) -o $(NAME)

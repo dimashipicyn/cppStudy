@@ -1,6 +1,6 @@
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -MMD -std=c++98 # -fsanitize=address
-SRCS = ClassZombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SRCS = ClassZombie.cpp main.cpp ZombieHorde.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 DEPENDS = ${SRCS:.cpp=.d}

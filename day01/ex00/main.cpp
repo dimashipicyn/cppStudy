@@ -1,6 +1,7 @@
 #include "ClassZombie.hpp"
 
 Zombie	*newZombie(std::string name);
+void    randomChump(std::string name);
 
 int main()
 {
@@ -15,5 +16,7 @@ int main()
 	t.announce();
 
 	ptr = newZombie("Kuck");
+    randomChump("topooto");
+    delete ptr;
 	return 0;
 }
