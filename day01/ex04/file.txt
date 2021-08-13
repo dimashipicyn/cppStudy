@@ -1,2 +1,3 @@
-hello world
-petuz
+hello world this replace program
+this program search string
+and replace hello loh
