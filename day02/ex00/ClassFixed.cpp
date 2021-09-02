@@ -3,7 +3,6 @@
 //
 
 #include "ClassFixed.hpp"
-#include "../ex01/ClassFixed.hpp"
 
 #include <iostream>
 
@@ -21,10 +20,11 @@ int Fixed::getRawBits() const {
 }
 
 void Fixed::setRawBits(int const rawBits) {
+    std::cout << "setRawBits member function called" << std::endl;
     rawBits_ = rawBits;
 }
 
-Fixed::Fixed(const Fixed & fixed) : rawBits_(fixed.getRawBits()) {
+Fixed::Fixed(const Fixed & fixed) : rawBits_(fixed.rawBits_) {
     std::cout << "Copy constructor called" << std::endl;
 }
 
