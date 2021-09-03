@@ -2,21 +2,24 @@
 // Created by Дима Щипицын on 03/09/2021.
 //
 
-#include "ClassFragTrap.hpp"
+#include "ClassDiamondTrap.hpp"
 
 int main()
 {
-    FragTrap a;
-    FragTrap b("Egor");
+    DiamondTrap a;
+    DiamondTrap b("Mike");
 
     a.attack("Egor");
     a.beRepaired(3);
     a.takeDamage(1);
 
-    b.attack("Mike");
+    b.attack("Egor");
     b.beRepaired(3);
     b.takeDamage(1);
+    b.whoAmI();
     b.highFivesGuys();
+    b.guardGate();
+
     return 0;
 }
 

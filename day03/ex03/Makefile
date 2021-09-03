@@ -1,5 +1,5 @@
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -MMD -std=c++98 -Wshadow -Wno-shadow # -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -MMD -std=c++98 -Wshadow #-Wno-shadow # -fsanitize=address
 SRCS = $(shell find . -type f -name "*.cpp")
 
 OBJ = $(SRCS:.cpp=.o)

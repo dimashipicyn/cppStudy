@@ -6,7 +6,7 @@
 #define CPPSTUDY_CLASSSCAVTRAP_HPP
 #include "ClassClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 public:
     ScavTrap();
     ScavTrap(const std::string &name);

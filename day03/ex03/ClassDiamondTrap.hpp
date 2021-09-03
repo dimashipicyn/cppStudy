@@ -7,16 +7,15 @@
 #include "ClassFragTrap.hpp"
 #include "ClassScavTrap.hpp"
 
-class DiamondTrap : virtual public FragTrap, virtual public ScavTrap {
+class DiamondTrap : public FragTrap, public ScavTrap {
 public:
     DiamondTrap();
-
-    DiamondTrap();
-
+    DiamondTrap(const std::string &name);
     ~DiamondTrap();
-    void whoAmI();
-
+    void    whoAmI();
+    void    attack(const std::string &target);
+private:
+    std::string diamondName_;
 };
-
 
 #endif //CPPSTUDY_CLASSDIAMONDTRAP_HPP
