@@ -4,6 +4,7 @@
 
 #include "ClassCat.hpp"
 #include "../ex01/ClassCat.hpp"
+#include "../ex01/ClassBrain.hpp"
 
 
 Cat::Cat() : Animal("Cat") {

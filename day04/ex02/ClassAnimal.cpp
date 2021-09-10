@@ -16,17 +16,3 @@ Animal::Animal(const std::string &type) {
 Animal::~Animal() {
     std::cout << "Animal destructor" << std::endl;
 }
-
-void Animal::makeSound() const {
-    std::cout << "Animal sound:)" << std::endl;
-}
-
-const std::string &Animal::getType() const {
-    return type_;
-}
-
-Animal& Animal::operator=(const Animal &animal) {
-    std::cout << "Assignation operator animal" << std::endl;
-    this->type_ = animal.getType();
-    return *this;
-}

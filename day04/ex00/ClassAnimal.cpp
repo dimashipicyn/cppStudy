@@ -9,7 +9,7 @@ Animal::Animal() : type_("Animal") {
 }
 
 Animal::Animal(const std::string &type) {
-    std::cout << "Animal name constructor" << std::endl;
+    std::cout << "Animal type constructor" << std::endl;
     type_ = type;
 }
 
