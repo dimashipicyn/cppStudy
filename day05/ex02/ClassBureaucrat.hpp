@@ -7,6 +7,8 @@
 #include <iostream>
 #include <exception>
 
+class Form;
+
 class Bureaucrat {
 public:
     Bureaucrat();
@@ -19,6 +21,7 @@ public:
     int                 getGrade() const;
     void                gradeUp();
     void                gradeDown();
+    void                executeForm(Form const & form);
 
     class GradeToHighException : public std::exception {
     public:

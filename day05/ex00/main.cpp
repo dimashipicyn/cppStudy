@@ -8,7 +8,27 @@
 int main()
 {
     try {
-        Bureaucrat bureaucrat;
+        Bureaucrat bureaucrat("Yaric", 3);
+        Bureaucrat bureaucrat1("Sergay", 149);
+        Bureaucrat b;
+
+        b = bureaucrat;
+        
+        std::cout << b << std::endl;
+
+        std::cout << bureaucrat << std::endl;
+        bureaucrat.gradeUp();
+        std::cout << bureaucrat << std::endl;
+        bureaucrat.gradeUp();
+        std::cout << bureaucrat << std::endl;
+        //bureaucrat.gradeUp();                 // throw GradeToHighException
+        //std::cout << bureaucrat << std::endl; // не выполнится
+
+        std::cout << bureaucrat1 << std::endl;
+        bureaucrat1.gradeDown();
+        std::cout << bureaucrat1 << std::endl;
+        //bureaucrat1.gradeDown();              // throw GradeToLowException
+        //std::cout << bureaucrat1 << std::endl;// не выполнится
     }
     catch (Bureaucrat::GradeToHighException &e) {
         std::cout << "Bureaucrat failed! " << e.what() << std::endl;

@@ -3,6 +3,7 @@
 //
 
 #include "ClassBureaucrat.hpp"
+#include "ClassForm.hpp"
 
 Bureaucrat::Bureaucrat() : name_(""), grade_(150) {
 
@@ -48,6 +49,16 @@ void Bureaucrat::gradeDown() {
     if ((grade_ + 1) > 150)
         throw Bureaucrat::GradeToLowException();
     grade_ += 1;
+}
+
+void Bureaucrat::executeForm(Form const &form) {
+    try {
+        form.execute(*this);
+        std::cout << "Bureaucrat " << name_ << " execute " << form.getName() << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << "Form cannot execute! "  << e.what() << std::endl;
+    }
 }
 
 const char *Bureaucrat::GradeToHighException::what() const _NOEXCEPT {
