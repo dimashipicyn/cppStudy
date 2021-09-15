@@ -4,7 +4,9 @@
 
 #include "ClassBureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {}
+Bureaucrat::Bureaucrat() {
+    throw Bureaucrat::GradeToLowException();
+}
 
 Bureaucrat::~Bureaucrat() {
 
@@ -15,13 +17,37 @@ const std::string &Bureaucrat::getName() const {
 }
 
 int Bureaucrat::getGrade() const {
-    return grade;
+    return grade_;
 }
 
 void Bureaucrat::gradeUp(int grade) {
-
+    grade_ += grade;
 }
 
 void Bureaucrat::gradeDown(int grade) {
+    grade_ -= grade;
+}
 
+const char *Bureaucrat::GradeToHighException::what() const _NOEXCEPT {
+    return err_.c_str();
+}
+
+Bureaucrat::GradeToHighException::GradeToHighException() : err_("Grade to high exception") {
+
+}
+
+Bureaucrat::GradeToHighException::~GradeToHighException() _NOEXCEPT {
+
+}
+
+Bureaucrat::GradeToLowException::GradeToLowException() : err_("Grade to low exception") {
+
+}
+
+Bureaucrat::GradeToLowException::~GradeToLowException() _NOEXCEPT {
+
+}
+
+const char *Bureaucrat::GradeToLowException::what() const _NOEXCEPT {
+    return err_.c_str();
 }
