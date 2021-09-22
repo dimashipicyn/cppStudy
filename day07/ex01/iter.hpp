@@ -6,13 +6,13 @@
 #define CPPSTUDY_ITER_HPP
 
 template <typename T>
-void print_elem(T const &elem)
+void print_elem(const T &elem)
 {
     std::cout << elem << std::endl;
 }
 
 template <typename T>
-void iter(T const *array, uint64_t size, void (*f)(T const &elem))
+void iter(const T *array, uint64_t size, void (*f)(const T &elem))
 {
     for (uint64_t i = 0; i < size; ++i) {
         f(array[i]);

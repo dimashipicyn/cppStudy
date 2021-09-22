@@ -5,7 +5,7 @@
 #include <iostream>
 #include "iter.hpp"
 
-void foo(std::string &s)
+void foo(const std::string &s)
 {
     std::cout << "Print foo: " << s << std::endl;
 }
