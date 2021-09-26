@@ -8,7 +8,7 @@ NAME = a.out
 
 .PHONY: all clean fclean re run
 
-all: $(SRCS) $(NAME) run
+all: $(SRCS) $(NAME)
 
 run:
 	./$(NAME)
