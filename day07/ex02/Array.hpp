@@ -12,6 +12,7 @@ public:
     Array() : len_(0), data_(nullptr) {}
     Array(unsigned int n) {
         data_ = new T[n];
+        memset(data_, 0, sizeof(T) * n);
         len_ = n;
     }
     Array(const Array &array) : len_(0), data_(nullptr) {
@@ -33,7 +34,7 @@ public:
             return data_[n];
         throw std::out_of_range("Array out of range");
     }
-    const unsigned int &len() {return len_;}
+    unsigned int &len() {return len_;}
 private:
     unsigned int    len_;
     T               *data_;
