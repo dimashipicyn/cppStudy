@@ -51,10 +51,21 @@ void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterato
     }
 }
 
-int Span::getSize() {
+int Span::operator[](int n) {
+    return numbers_[n];
+}
+
+Span::Span(const Span &span) {
+    operator=(span);
+}
+
+int Span::getSize() const {
     return size_;
 }
 
-int Span::operator[](int n) {
-    return numbers_[n];
+Span &Span::operator=(const Span &span) {
+    size_ = span.size_;
+    capacity_ = span.capacity_;
+    numbers_ = span.numbers_;
+    return *this;
 }
